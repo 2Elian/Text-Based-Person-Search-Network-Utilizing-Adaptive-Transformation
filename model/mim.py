@@ -8,10 +8,7 @@ from .transformer_utils import zeros_, DropPath, Identity
 import paddle
 import paddle.nn as nn_1
 
-
-#接VIT FPN + MIM 用style_v_2与image_features做mim
-
-class IRRA(nn.Module):
+class ADTNET(nn.Module):
     def __init__(self, args, num_classes=11003,num_fpn_levels=3):
         super().__init__()
         self.args = args
@@ -247,7 +244,7 @@ class IRRA(nn.Module):
 
 
 def build_model(args, num_classes=11003):
-    model = IRRA(args, num_classes,num_fpn_levels=3)
+    model = ADTNET(args, num_classes,num_fpn_levels=3)
     # covert model to fp16
     convert_weights(model)
     return model

@@ -76,7 +76,7 @@ def collate(batch):#用于DataLoader里面,作为参数传递给它
 
 
 def build_dataloader(args, tranforms=None):
-    logger = logging.getLogger("IRRA.dataset")
+    logger = logging.getLogger("ADT-NET.dataset")
 
     num_workers = args.num_workers
     dataset = __factory[args.dataset_name](root=args.root_dir)#()后的目的是为指定的类传递初始化参数root

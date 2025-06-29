@@ -1,6 +1,8 @@
-# ADT-Net: Text-Based Person Search Network Utilizing Adaptive Transformation
+# ADT-Net: Adaptive Transformation-Driven Text-BasedPerson Search Network for Enhancing Cross-Modal Retrieval Robustness
 
-This is the official PyTorch implementation of the paper ADT-Net: Text-Based Person Search Network Utilizing Adaptive Transformation. This repository supports training and evaluation on three text-based person search benchmarks: CUHK-PEDES, ICFG-PEDES and RSTPReid.
+## Abstract
+
+Text-based person search aims to retrieve person images matching a given textual description. The challenge lies in mapping images and textual descriptions into a unified semantic space. This paper introduces ADT-Net, a novel framework designed to address the issue of excessive intra-class variance and insufficient inter-class variance caused by lighting variations. ADT-Net comprises two key modules: Invariant Representation Learning (IRL), which employs style transfer strategies and multi-scale alignment techniques to learn visually invariant features, and Dynamic Matching Alignment (DMA), which introduces nonlinear transformations and learnable dynamic temperature parameters to optimize the prediction distribution. Experimental results on multiple benchmark datasets demonstrate that ADT-Net outperforms current mainstream baseline methods, achieving superior retrieval accuracy and generalization ability. Here, we show that our proposed method significantly enhances the robustness of cross-modal person retrieval, particularly under varying lighting conditions and shooting angles.
 
 ![](/img/framework.png "Magic Gardens")
 
@@ -33,6 +35,19 @@ This is the official PyTorch implementation of the paper ADT-Net: Text-Based Per
 |   |-- <RSTPReid>/
 |       |-- imgs
 |       |-- data_captions.json
+```
+
+
+3. Installation Environment
+
+```bash
+conda create -n adtnet python=3.8
+
+conda activate adtnet
+
+pip install torch==1.3.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1+cu117
+
+pip install -r requirements.txt
 ```
 
 ### Training
